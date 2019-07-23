@@ -25,7 +25,7 @@
                                         <span t-field="o.company_id.city"/>,&amp;nbsp; Việt Nam
                                     </div>
                                 </t>
-                                <div>Điện thoạiaaaaaaa<i>
+                                <div>Điện thoại<i>
                                     (Phone)</i>:
                                     <spand t-field="o.company_id.phone"/>
                                 </div>
