@@ -53,6 +53,7 @@ body, html {
 	width: 100%;
 	height: 100%;
 	display: block;
+	background-image: url(/odoo_web_login/static/src/img/logon.png) !important;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
