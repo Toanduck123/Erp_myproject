@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_quotation_header" inherit_id="web.report_layout">
+            <xpath expr="//head//*" position="replace">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header" style="letter-spacing: 0.1em;
+                    font-family: Arial, Helvetica, sans-serif; line-height:1.6;
+                    font-size: 12px; letter-spacing: 1px">
+                        <div class="row" style=" background-image: url(bms_templates/static/src/img/phai.png);
+                                                background-repeat: no-repeat; background-position: right top;">
+                            <div class="col-xs-3">
+                                <img t-if="o.company_id.logo" t-attf-src="data:image/png;base64,#{o.company_id.logo}"
+                                     class="pull-left" style="max-height: 90px; margin-top: 40px;"/>
+                            </div>
+
+                            <div class="col-xs-9">
+                                <h4 style="  padding-top: 40px;">
+                                    <spand t-field="o.company_id.name"/>
+                                </h4>
+                                <t t-if="o.company_id.street">
+                                    <div>Địa chỉ<i>
+                                        (Address)</i>:&amp;nbsp;
+                                        <spand t-field="o.company_id.street"/>,&amp;nbsp;
+                                        <span t-field="o.company_id.city"/>,&amp;nbsp; Việt Nam
+                                    </div>
+                                </t>
+                                <div>Điện thoạiaaaaaaa<i>
+                                    (Phone)</i>:
+                                    <spand t-field="o.company_id.phone"/>
+                                </div>
+                                <div>Email:
+                                    <spand t-field="o.company_id.email"/>
+                                </div>
+                                <div>Website:
+                                    <spand t-field="o.company_id.website"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                    <div class="footer" style="background-image: url(/bms_templates/static/src/img/footer.png);-->
+                    <!--                        background-repeat:no-repeat; height: 250px; background-size: 1600px 130px; "/>-->
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

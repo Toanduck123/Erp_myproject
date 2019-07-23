@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <delete id="sale.mail_template_data_notification_email_sale_order" model="mail.template"/>
+    <data noupdate="0">
+        <record id="sale.mail_template_data_notification_email_sale_order" model="mail.template">
+            <field name="name">Sales Order Notification Email</field>
+            <field name="subject">${object.subject}</field>
+            <field name="model_id" ref="mail.model_mail_message"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or ctx.get('company')
+                <body style="margin: 0; padding: 0;">
+                <table border="0"  cellspacing="0" owidth="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed; border-collapse:separate;" summary="o_mail_notification">
+                    <tbody>
+
+                      <!-- HEADER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" style="min-width: 590px; padding: 20px; background-color: rgb(255, 255, 255);">
+                            <tr>
+                                <div style=" float: left;">
+                                  <img src="/logo.png?company=${company.id}"  width="100px" height="80px" style=" padding: 0px; margin: 0px;  t-attf-src="data:image/png;base64,#{object.company_id.logo}"">
+                                </div>
+                                <div style="margin-left: 120px; padding-top: 5px; background-image: url(https://scontent.fhan3-3.fna.fbcdn.net/v/t1.15752-9/50556912_377260509740791_8332841478908805120_n.png?_nc_cat=101&_nc_oc=AQmMjKb6OxflBgwVfk2453N0aXq5i5hxsdToXRFWWArk3WpQ_0oOsK6u87_21cDMBJ6cPX5yCC-x2wxLRvlGyK4Z&_nc_ht=scontent.fhan3-3.fna&oh=285dde12122f8b7f7bb8315962033e45&oe=5CB9E7E1);
+                                    background-repeat: no-repeat; background-size: 120px 40px; background-position: right 0px;">
+                                    ${company.name}
+                                    <div>Ð?a ch?: ${company.street}</div>
+                                    <div>Ð??n tho?i: ${company.phone}</div>
+                                    <div >Email: ${company.email} | Website: ${company.website}</div>
+                                </div>
+                            </tr>
+                          </table>
+                        </td>
+ </tr>
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
+                            <tbody>
+                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
+                                ${object.body | safe}
+                              </td>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- FOOTER -->
+<!--                      <tr>-->
+<!--                        <td align="center">-->
+<!--                          <img src="/bms_templates/static/src/img/footer.png" style="padding: 0px; margin: 0px; height: 80px; width: 590px;">-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
+        </record>
+    </data>
+</odoo>

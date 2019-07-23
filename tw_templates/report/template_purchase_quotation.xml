@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase.report_purchasequotation_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+            <div class="page" style="letter-spacing: 0.1em;
+            font-family: Arial, Helvetica, sans-serif; line-height:1.6;
+            font-size: 16px; letter-spacing: 1px">
+                <!--            <div class="page">-->
+
+                <div class="oe_structure"/>
+                <h2 style="text-align: center;">YÊU CẦU BÁO GIÁ<br/>(REQUEST FOR QUOTE)
+                </h2>
+                <h3 style="text-align: center; margin-top: 10px;">
+                    <i>(Số: #&amp;nbsp;<span t-field="o.name"/>)
+                    </i>
+                </h3>
+                <div class="row mt32 mb16">
+                    <div class="col-xs-12">
+                        <b>Kính gửi&amp;nbsp;(Sent to):</b>
+                        <span t-field="o.partner_id"/>
+                        <div>
+                            <t t-if="o.partner_id.street">
+                                <b>Địa chỉ&amp;nbsp;(Address):</b>
+                                <span t-field="o.partner_id.street"/>
+                            </t>
+                            <t t-if="o.partner_id.street2">
+                                ,
+                                <span t-field="o.partner_id.street2"/>
+                            </t>
+                            <t t-if="o.partner_id.city">
+                                ,
+                                <span t-field="o.partner_id.city"/>
+                            </t>
+                        </div>
+                        <div>
+                            <p t-if="o.partner_id.vat">
+                                <b><t t-esc="o.company_id.country_id.vat_label or 'MST'"/>:
+                                </b>
+                                <span t-field="o.partner_id.vat"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 mb16">
+                    <b>&amp;nbsp;&amp;nbsp;&amp;nbsp;GIAO HÀNG ĐẾN&amp;nbsp;(DELIVERY TO)</b>
+                    <div class="col-xs-12">
+                        <div>
+                            <b>
+                                Công ty&amp;nbsp;(Company):
+                            </b>
+                            <span t-field="o.dest_address_id.parent_id.name"/>
+                        </div>
+                        <div>
+                            <t t-if="o.dest_address_id.street">
+                                <b>Địa chỉ giao hàng&amp;nbsp;(Address):</b>&amp;nbsp;
+                                <span t-field="o.dest_address_id.street"/>
+                            </t>
+                            <t t-if="o.dest_address_id.street2">
+                                &amp;nbsp;,&amp;nbsp;
+                                <span t-field="o.dest_address_id.street2"/>
+                            </t>
+                            <t t-if="o.dest_address_id.city">
+                                ,&amp;nbsp;
+                                <span t-field="o.dest_address_id.city"/>
+                            </t>
+                            <!--                            <t t-else="">-->
+                            <!--                            </t>-->
+                        </div>
+                        <!--                        <div>-->
+                        <!--                            <b>Địa chỉ giao hàng &amp;nbsp;(Address):-->
+                        <!--                            </b>-->
+                        <!--                            <span t-field="o.dest_address_id.street"/> &amp;nbsp;,&amp;nbsp;-->
+                        <!--                            <span t-field="o.dest_address_id.street2"/>,&amp;nbsp;-->
+                        <!--                            <span t-field="o.dest_address_id.city"/>-->
+                        <!--                        </div>-->
+                        <div>
+                            <b>
+                                Số điện thoại&amp;nbsp;(Tel):
+                            </b>
+                            <span t-field="o.dest_address_id.phone"/>
+                        </div>
+
+                    </div>
+                </div>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>
+                                <strong>Đề nghị quý nhà cung cấp báo giá các hạng mục chi tiết dưới đây<br/>(Please
+                                    quote following the detail below):
+                                </strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Ngày nhận<br/>(Needed day)
+                                </strong>
+                            </th>
+                            <th class="text-right">
+                                <strong>Số lượng<br/>(Quantity)
+                                </strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.order_line" t-as="order_line">
+                            <td>
+                                <span t-field="order_line.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="order_line.date_planned"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="order_line.product_qty"/>
+                                <span t-field="order_line.product_uom" groups="product.group_uom"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p t-field="o.notes"/>
+
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_purchasequotation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="purchase.report_purchasequotation_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
