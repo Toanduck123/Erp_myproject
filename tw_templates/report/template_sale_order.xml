@@ -23,21 +23,16 @@
                                         <span t-field="o.company_id.city"/>
                                     </div>
                                 </t>
-                                <div>Điện thoại<i>
-                                    (Phone)</i>:
+                                <div style="font-size:14px;">Điện thoại
+                                    <i>(Phone)</i>:
                                     <span t-field="o.company_id.phone"/>
 
-                                    <div style="font-size:14px;">Điện thoại
-                                        <i>(Phone)</i>:
-                                        <span t-field="o.company_id.phone"/>
-
-                                    </div>
-                                    <div style="font-size:14px;">Email:
-                                        <span t-field="o.company_id.email"/>
-                                    </div>
-                                    <div style="font-size:14px;">Website:
-                                        <span t-field="o.company_id.website"/>
-                                    </div>
+                                </div>
+                                <div style="font-size:14px;">Email:
+                                    <span t-field="o.company_id.email"/>
+                                </div>
+                                <div style="font-size:14px;">Website:
+                                    <span t-field="o.company_id.website"/>
                                 </div>
                             </div>
                         </div>
