@@ -23,25 +23,26 @@
                                         <span t-field="o.company_id.city"/>
                                     </div>
                                 </t>
-<<<<<<< HEAD
                                 <div>Điện thoại<i>
                                     (Phone)</i>:
-                                    <spand t-field="o.company_id.phone"/>
-=======
-                                <div style="font-size:14px;">Điện thoại
-                                    <i>(Phone)</i>:
                                     <span t-field="o.company_id.phone"/>
->>>>>>> 415dc21588d50c88e0d034f48c831a5d39e0d2e4
-                                </div>
-                                <div style="font-size:14px;">Email:
-                                    <span t-field="o.company_id.email"/>
-                                </div>
-                                <div style="font-size:14px;">Website:
-                                    <span t-field="o.company_id.website"/>
+
+                                    <div style="font-size:14px;">Điện thoại
+                                        <i>(Phone)</i>:
+                                        <span t-field="o.company_id.phone"/>
+
+                                    </div>
+                                    <div style="font-size:14px;">Email:
+                                        <span t-field="o.company_id.email"/>
+                                    </div>
+                                    <div style="font-size:14px;">Website:
+                                        <span t-field="o.company_id.website"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!--                    <div class="footer" style="background-image: url(/bms_templates/static/src/img/footer.png);-->
                     <!--                        background-repeat:no-repeat; height: 250px; background-size: 1600px 130px; "/>-->
                 </t>

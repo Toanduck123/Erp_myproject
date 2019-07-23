@@ -18,12 +18,12 @@
         'report/content_invoice.xml',
         'report/template_purchase.xml',
         'report/template_purchase_quotation.xml',
-        'report/bms_purchase.xml',
+        'report/tw_purchase.xml',
 
         'report/packing_list.xml',
-        'report/bms_stock_picking.xml',
-        'report/bms_views_picking.xml',
-        'report/bms_company.xml',
+        'report/tw_stock_picking.xml',
+        'report/tw_views_picking.xml',
+        'report/tw_company.xml',
     ],
     'qweb': [],
 }
