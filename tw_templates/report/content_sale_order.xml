@@ -11,7 +11,7 @@
 
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                         <span t-if="doc.state not in ['draft','sent']">
-                            <h3 style="text-align: center;">ĐƠN HÀNG ssssss
+                            <h3 style="text-align: center;">ĐƠN HÀNG
                                 <br/>
                                 <i>(Sale Order #<span t-field="doc.name"/>)
                                 </i>
