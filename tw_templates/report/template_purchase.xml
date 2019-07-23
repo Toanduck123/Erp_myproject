@@ -6,35 +6,35 @@
             font-family: Arial, Helvetica, sans-serif; line-height:1.6;
             font-size: 16px; letter-spacing: 1px">
                 <div class="oe_structure"/>
-                <h2 style="text-align: center;">ÐON Ð?T HÀNG</h2>
+                <h2 style="text-align: center;">ÐƠN ÐẶT HÀNG</h2>
                 <h3 style="text-align: center; margin-top: 10px;">
                     <i>(PURCHASE ORDER)</i>
                 </h3>
                 <div class="row mt32 mb32">
                     <div t-if="o.name" class="col-xs-6">
-                        <strong>Yêu c?u báo giá&amp;nbsp;<i>(RFQ#)</i>:
+                        <strong>Yêu cầu báo giá&amp;nbsp;<i>(RFQ#)</i>:
                         </strong>
                         <span t-field="o.name"/>
                     </div>
                     <div t-if="o.partner_ref" class="col-xs-6">
-                        <strong>Ðon d?t hàng&amp;nbsp;(PO#):</strong>
+                        <strong>Ðon đặt hàng&amp;nbsp;(PO#):</strong>
                         <span t-field="o.partner_ref"/>
                     </div>
                     <div t-if="o.date_order" class="col-xs-6">
-                        <strong>Ngày d?t hàng&amp;nbsp;<i>(PO Date)</i>:
+                        <strong>Ngày đặt hàng&amp;nbsp;<i>(PO Date)</i>:
                         </strong>
                         <span t-field="o.date_order"/>
                     </div>
                 </div>
                 <div>
-                    <b>G?i t?i nhà cung c?p
+                    <b>Gửi tới nhà cung cấp
                         <i>(To Vendor)</i>:
                     </b>
                     <span t-field="o.partner_id.name"/>
                 </div>
                 <div>
                     <t t-if="o.partner_id.street">
-                        <b>Ð?a ch? <i>(Vendor's Address)</i>:
+                        <b>Ðịa chỉ <i>(Vendor's Address)</i>:
                         </b>
                         <span t-field="o.partner_id.street"/>
                     </t>
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <b>
-                        Di d?ng:
+                        Di động:
                     </b>
                     <span t-field="o.dest_address_id.phone"/>
                 </div>
@@ -62,7 +62,7 @@
                     <!--                <span t-field="o.partner_id"/>-->
                     <div>
                         <t t-if="o.partner_id.name">
-                            <b>Ðon v? d?t hàng&amp;nbsp;<i>(Client)</i>:
+                            <b>Ðon vị nhập hàng&amp;nbsp;<i>(Client)</i>:
                             </b>
                             <span t-field="o.company_id"/>
                         </t>
@@ -74,7 +74,7 @@
                         <t t-foreach="o.dest_address_id.child_ids" t-as="dest_address_id">
                             <t t-if="dest_address_id.type == 'invoice'">
                                 <p>
-                                    <b>Ð?a ch? xu?t hóa don&amp;nbsp;<i>(Invoice Address)</i>:
+                                    <b>Địa chỉ xuất hóa đơn&amp;nbsp;<i>(Invoice Address)</i>:
                                     </b>
                                     <t t-esc="dest_address_id.street"/>,
                                     <t t-esc="dest_address_id.street2"/>,
@@ -95,7 +95,7 @@
                         <t t-foreach="o.dest_address_id.child_ids" t-as="dest_address_id">
                             <t t-if="dest_address_id.type == 'delivery'">
                                 <p>
-                                    <b>Ð?a ch? g?i hàng&amp;nbsp;<i>(Delivery Address)</i>:
+                                    <b>Địa chỉ giao hàng&amp;nbsp;<i>(Delivery Address)</i>:
                                     </b>
                                     <t t-esc="dest_address_id.street"/>,
                                     <t t-esc="dest_address_id.street2"/>,
@@ -114,7 +114,7 @@
                         <!--                        <span t-field="o.dest_address_id.city"/>, &amp;nbsp;Vi?t Nam-->
                     </div>
                     <div>
-                        <b>Ngu?i d?t hàng&amp;nbsp;<i>(Contact)</i>:
+                        <b>Nguời đặt hàng&amp;nbsp;<i>(Contact)</i>:
                         </b>
                         <span t-field="o.person_set"/>
                         <!--                    - -->
@@ -123,25 +123,25 @@
                         <!--                    <span t-field="o.person_set.mobile"/>-->
                     </div>
                     <div>
-                        <b>Th?i gian giao hàng&amp;nbsp;<i>(Delivery date)</i>:
+                        <b>Thời gian giao hàng&amp;nbsp;<i>(Delivery date)</i>:
                         </b>
                         <span t-field="o.date_planned"/>
                     </div>
 
                 </div>
                 <div>
-                    <strong>CHI TI?T ÐON HÀNG (ORDER LINES)</strong>
+                    <strong>CHI TIẾT ĐƠN HÀNG (ORDER LINES)</strong>
                 </div>
                 <table class="table table-condensed text-center">
                     <thead style="text: center">
                         <tr>
                             <th>
-                                <strong>S?n ph?m
+                                <strong>Sản Phẩm
                                     <i>(Description)</i>
                                 </strong>
                             </th>
                             <th>
-                                <strong>Thu?
+                                <strong>Thuế
                                     <i>(Taxes)</i>
                                 </strong>
                             </th>
@@ -152,19 +152,19 @@
                                 </strong>
                             </th>
                             <th class="text-right">
-                                <strong>S? lu?ng
+                                <strong>Số lượng
                                     <br/>
                                     <i>(Qty)</i>
                                 </strong>
                             </th>
                             <th class="text-right">
-                                <strong>Ðon giá
+                                <strong>Ðơn giá
                                     <br/>
                                     <i>(Unit Price)</i>
                                 </strong>
                             </th>
                             <th class="text-right">
-                                <strong>Thành ti?n
+                                <strong>Thành tiền
                                     <br/>
                                     <i>(Amount)</i>
                                 </strong>
@@ -203,7 +203,7 @@
                         <table class="table table-condensed">
                             <tr class="border-black">
                                 <td>
-                                    <strong>Thành ti?n
+                                    <strong>Thành tiền
                                         <i>(Subtotal)</i>
                                     </strong>
                                 </td>
@@ -213,7 +213,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Thu?
+                                <td>Thuế
                                     <i>(Taxes)</i>
                                 </td>
                                 <td class="text-right">
@@ -223,7 +223,7 @@
                             </tr>
                             <tr class="border-black">
                                 <td>
-                                    <strong>T?ng
+                                    <strong>Tổng
                                         <i>(Total)</i>
                                     </strong>
                                 </td>

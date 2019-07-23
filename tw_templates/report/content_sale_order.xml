@@ -11,24 +11,24 @@
 
                     <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                         <span t-if="doc.state not in ['draft','sent']">
-                            <h3 style="text-align: center;">ĐƠN HÀNG ssssss
+                            <p style="text-align:center;font-size:30px;font-weight:400;">ĐƠN HÀNG
                                 <br/>
-                                <i>(Sale Order #<span t-field="doc.name"/>)
+                                <i style="font-size:25px">(Sale Order #<span t-field="doc.name"/>)
                                 </i>
-                            </h3>
+                            </p>
                             <div t-if="doc.date_order and doc.state in ['draft','sent']">
                                 Ngày đặt hàng<i>(Sale Order Date)</i>:
                                 <span t-field="doc.date_order"/>
                             </div>
                         </span>
                         <span t-if="doc.state in ['draft','sent']">
-                            <h3 style="text-align: center;">BẢNG BÁO GIÁ
+                            <p style="text-align:center;font-size:30px;font-weight:400;">BẢNG BÁO GIÁ
                                 <br/>
-                                (<i>Quotation</i> #
-                                <span t-field="doc.name"/>)
-                            </h3>
-                            <div t-if="doc.date_order and doc.state in ['draft','sent']">
-                                Ngày báo giá <i>&amp;nbsp;(Quotation Date)</i>:
+                                (<i style="font-size:25px">Quotation</i> #
+                                <span style="font-size:25px" t-field="doc.name"/>)
+                            </p>
+                            <div style="margin-bottom:25px;font-size:16px;" t-if="doc.date_order and doc.state in ['draft','sent']">
+                                Ngày báo giá<i>&amp;nbsp;(Quotation Date)</i>:
                                 <span t-field="doc.date_order"/>
                             </div>
                             <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-xs-12">
@@ -40,26 +40,27 @@
                     </t>
 
                 </div>
-                <div class="row mt32">
-                    <div class="col-md-12 mt32 mb16">
-                        <h4 style="font-weight: bold;">THÔNG TIN KHÁCH HÀNG(CUSTOMER)</h4>
-                        <div>
-                            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-weight:bold;margin:15px 0;font-size:18px">THÔNG TIN KHÁCH HÀNG (CUSTOMER)
+                        </p>
+                        <div style="text-indent:1%;">
+                            <div style="margin-bottom:3px;">
                                 <b>Công ty (Company):</b>
                                 <span t-field="doc.partner_id.name"/>
                             </div>
-                            <div>
+                            <div style="margin-bottom:3px;">
                                 <b>Địa chỉ (Address):</b>
                                 <span t-field="doc.partner_id.street"/>
                             </div>
-                            <div>
+                            <div style="margin-bottom:3px;">
                                 <t t-if="doc.partner_id.vat">
                                     <b>MTS (Tax Code):</b>
                                     <span t-field="doc.partner_id.vat"/>
                                 </t>
                                 <t t-else=""></t>
                             </div>
-                            <div>
+                            <div style="margin-bottom:3px;">
                                 <t t-if="doc.partner_shipping_id.name">
                                     <b>Tên người liên lạc (Contact):</b>
                                     <span t-field="doc.partner_shipping_id.name"/>
@@ -67,7 +68,7 @@
                                 <t t-else=""></t>
 
                             </div>
-                            <div>
+                            <div style="margin-bottom:3px;">
                                 <t t-if="doc.partner_shipping_id.street">
                                     <b>Địa chỉ giao hàng (Delivery address):</b>
                                     &amp;nbsp;<span t-field="doc.partner_shipping_id.street"/>&amp;nbsp;
@@ -81,19 +82,20 @@
                                     <span t-field="doc.partner_shipping_id.city"/>
                                 </t>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <b>Điện thoại:</b>
-                                <span t-field="doc.partner_shipping_id.phone"/>
-                            </div>
-                            <div class="col-xs-3">
-                                <b>Di động:</b>
-                                <span t-field="doc.partner_shipping_id.mobile"/>
-                            </div>
-                            <div class="col-xs-5">
-                                <b>Email:</b>
-                                <span t-field="doc.partner_shipping_id.email"/>
+
+                            <div class="row" style="margin-bottom:3px;">
+                                <div class="col-xs-4">
+                                    <b>Điện thoại:</b>
+                                    <span t-field="doc.partner_shipping_id.phone"/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <b>Di động:</b>
+                                    <span t-field="doc.partner_shipping_id.mobile"/>
+                                </div>
+                                <div class="col-xs-5">
+                                    <b>Email:</b>
+                                    <span t-field="doc.partner_shipping_id.email"/>
+                                </div>
                             </div>
                         </div>
                         <!--                        <div>-->
@@ -103,15 +105,15 @@
                         <!--                            </t>-->
                         <!--                            <t t-else=""></t>-->
                         <!--                        </div>-->
-
-
-                        <h4 style="font-weight: bold;">THÔNG TIN NGƯỜI BÁN(SELLER)</h4>
-                        <div>
-                            <div>
+                    </div>
+                    <div class="col-md-12">
+                        <p style="font-weight:bold;margin:15px 0;font-size:18px">THÔNG TIN NGƯỜI BÁN (SELLER)</p>
+                        <div style="text-indent:1%;margin-bottom:3px;">
+                            <div style="margin-bottom:3px;">
                                 <b>Liên hệ (Contact):</b>
                                 <span t-field="doc.user_id"/>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-bottom:3px;">
                                 <div class="col-xs-4">
                                     <b>Điện thoại:</b>
                                     <span t-field="doc.company_id.phone"/>
@@ -125,7 +127,7 @@
                                     <span t-field="doc.company_id.email"/>
                                 </div>
                             </div>
-                            <div class="row" id="informations">
+                            <div class="row" id="informations" style="margin-bottom:3px;">
                                 <div t-if="doc.client_order_ref" class="col-xs-3">
                                     <span>Your Reference:</span>
                                     <span t-field="doc.client_order_ref"/>
@@ -149,9 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <b>CHI TIẾT ĐƠN HÀNG
-                    <i>(ORDER LINES)</i>
-                </b>
+                <p style="font-weight:bold;margin:15px 0;font-size:18px">CHI TIẾT ĐƠN HÀNG <i>(ORDER LINES)</i></p>
                 <!-- Is there a discount on at least one line? -->
                 <!--                <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>-->
                 <t t-foreach="doc.order_lines_layouted()" t-as="page">
