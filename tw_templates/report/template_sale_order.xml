@@ -9,31 +9,35 @@
                     font-size: 12px; letter-spacing: 1px">
                         <div class="row" style=" background-image: url(bms_templates/static/src/img/phai.png);
                                                 background-repeat: no-repeat; background-position: right top;">
-                            <div class="col-xs-3">
+                            <div class="col-xs-3" style="text-align:center;">
                                 <img t-if="o.company_id.logo" t-attf-src="data:image/png;base64,#{o.company_id.logo}"
-                                     class="pull-left" style="max-height: 90px; margin-top: 40px;"/>
+                                     class="pull-left" style="width: 80%; height: auto;"/>
                             </div>
 
-                            <div class="col-xs-9">
-                                <h4 style="  padding-top: 40px;">
-                                    <spand t-field="o.company_id.name"/>
-                                </h4>
+                            <div class="col-xs-9" style="padding-top:10px">
+                                <h4 style="font-weight:bold" t-field="o.company_id.name"></h4>
                                 <t t-if="o.company_id.street">
-                                    <div>Địa chỉ<i>
-                                        (Address)</i>:&amp;nbsp;
-                                        <spand t-field="o.company_id.street"/>,&amp;nbsp;
-                                        <span t-field="o.company_id.city"/>,&amp;nbsp; Việt Nam
+                                    <div style="font-size:14px;">Địa chỉ
+                                        <i>(Address)</i>:&amp;nbsp;
+                                        <span t-field="o.company_id.street"/>,
+                                        <span t-field="o.company_id.city"/>
                                     </div>
                                 </t>
+<<<<<<< HEAD
                                 <div>Điện thoại<i>
                                     (Phone)</i>:
                                     <spand t-field="o.company_id.phone"/>
+=======
+                                <div style="font-size:14px;">Điện thoại
+                                    <i>(Phone)</i>:
+                                    <span t-field="o.company_id.phone"/>
+>>>>>>> 415dc21588d50c88e0d034f48c831a5d39e0d2e4
                                 </div>
-                                <div>Email:
-                                    <spand t-field="o.company_id.email"/>
+                                <div style="font-size:14px;">Email:
+                                    <span t-field="o.company_id.email"/>
                                 </div>
-                                <div>Website:
-                                    <spand t-field="o.company_id.website"/>
+                                <div style="font-size:14px;">Website:
+                                    <span t-field="o.company_id.website"/>
                                 </div>
                             </div>
                         </div>
