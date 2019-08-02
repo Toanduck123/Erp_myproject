@@ -38,7 +38,7 @@
                     <t t-call="web.menu" />
                 </nav>
                  <a class="oe_logo left-logo" t-attf-href="/web?{{ keep_query() }}">
-                            <img  class="main-logo" src='/impacto_backend_theme/static/description/Talentwins.png'/>
+                            <img  class="main-logo" src='/impacto_backend_theme/static/description/lgweb-01.png'/>
                             <img class="float-logo" src='/dashboard'/>
                         </a>
                 <nav class="navbar navbar-default main-nav"

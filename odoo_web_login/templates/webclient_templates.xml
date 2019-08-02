@@ -16,8 +16,9 @@
    			<attribute name="class">body_login</attribute>
    		</xpath>
    		
-   		<xpath expr="//div[hasclass('o_database_list')]" position="before">
+   		<xpath expr="//div" position="before">
    			<div id="background-wrapper">
+				<img src="../odoo_web_login/static/src/img/bgson.png"/>
 			</div>
    		</xpath>
    		
@@ -36,13 +37,13 @@
 		<xpath expr="//label[@for='password']" position="replace" />
 		
 		<xpath expr="//input[@name='login']" position="attributes">
-			<attribute name="placeholder">Email ...</attribute>
+			<attribute name="placeholder">Email</attribute>
 			<attribute name="autocomplete">off</attribute>
 			<attribute name="autocorrect">off</attribute>
 		</xpath>
 		
 		<xpath expr="//input[@name='password']" position="attributes">
-			<attribute name="placeholder">Password ...</attribute>
+			<attribute name="placeholder">Password</attribute>
 		</xpath>
 		
 		<xpath expr="//span[hasclass('input-group-btn')]/a[@href='/web/database/selector']" position="replace">

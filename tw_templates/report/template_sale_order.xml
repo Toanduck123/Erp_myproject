@@ -26,7 +26,6 @@
                                 <div style="font-size:14px;">Điện thoại
                                     <i>(Phone)</i>:
                                     <span t-field="o.company_id.phone"/>
-
                                 </div>
                                 <div style="font-size:14px;">Email:
                                     <span t-field="o.company_id.email"/>
