@@ -24,6 +24,7 @@
         'report/tw_stock_picking.xml',
         'report/tw_views_picking.xml',
         'report/tw_company.xml',
+        # 'views/res_partner.xml',
     ],
     'qweb': [],
 }
